@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FDFDFF</color>
+    <color name="colorPrimaryDark">#95989A</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorConsent">#76BF2D</color>
+    <color name="drawerIconColor">#02111B</color>
+</resources>
