@@ -16,15 +16,23 @@ import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class Anmodning extends AppCompatActivity
+public class GivTilladelse extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anmodning);
+        setContentView(R.layout.activity_giv_tilladelse);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -32,6 +40,18 @@ public class Anmodning extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
+        getSupportActionBar().setTitle("Consentcoin");
+
+        Spinner spinner = (Spinner)
+                findViewById(R.id.brugernavn_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.brugernavn_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
 
         Spinner spinner2 = (Spinner)
                 findViewById(R.id.virksomhed_spinner);
@@ -41,7 +61,7 @@ public class Anmodning extends AppCompatActivity
 // Specify the layout to use when the list of choices appears
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
-        spinner2.setAdapter(adapter2);
+        spinner.setAdapter(adapter2);
     }
 
     @Override
@@ -57,7 +77,7 @@ public class Anmodning extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.anmodning, menu);
+        getMenuInflater().inflate(R.menu.giv_tilladelse, menu);
         return true;
     }
 
