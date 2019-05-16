@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="brugernavn_array">
+        <item>Andras</item>
+        <item>Emil</item>
+        <item>Mads</item>
+        <item>Martin</item>
+        <item>Peter</item>
+    </string-array>
+
+
+    <string-array name="virksomhed_array">
+        <item>Zealand</item>
+        <item>Stege roklub</item>
+    </string-array>
+</resources>
