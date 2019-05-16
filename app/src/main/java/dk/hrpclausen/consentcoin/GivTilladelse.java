@@ -61,7 +61,7 @@ public class GivTilladelse extends AppCompatActivity
 // Specify the layout to use when the list of choices appears
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
-        spinner.setAdapter(adapter2);
+        spinner2.setAdapter(adapter2);
     }
 
     @Override

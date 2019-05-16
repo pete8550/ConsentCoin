@@ -11,7 +11,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Skriv et brugernavn"
+        android:hint="Skriv et brugernavn"
         android:fontFamily="@font/notosans"
         android:textSize="16sp"
         android:backgroundTint="@color/colorConsent"
