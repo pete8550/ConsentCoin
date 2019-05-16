@@ -14,7 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
-public class MainActivity extends AppCompatActivity
+public class Anmodning extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_anmodning);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
-        getSupportActionBar().setTitle("Consentcoin");
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -44,6 +42,28 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.anmodning, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -58,6 +78,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_tools) {
 
+        } else if (id == R.id.nav_share) {
+
         } else if (id == R.id.nav_send) {
 
         }
@@ -67,17 +89,3 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 }
-
-//Disse ting skal designes
-//TODO 1: Slet/usynliggør tekst Cosentcoin
-//TODO 2: Lav en textview i toolbar (xml), og design og placer nyt Consentcoin logo
-//TODO 5: Design næste activity
-//TODO 6: Design menuen ved klik på hamburger ikonet
-
-//Disse ting skal programmeres
-//TODO 3: Ændr teksten i edittext (skriv et brugernavn), så den forsvinder ved skrivning
-//TODO 4: Gør teksten funktionel, opret nyt activity og log ind med funktionaliteten
-
-//Andet der kan laves
-//TODO 7: Kommentér både kode og xml. Intet er dokumenteret endnu
-//TODO 8: Skab mere orden i koden. Både i res og i klasser. Eventuelt lav flere styles, så koden minimeres
