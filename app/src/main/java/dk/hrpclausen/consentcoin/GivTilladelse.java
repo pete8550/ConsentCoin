@@ -62,6 +62,26 @@ public class GivTilladelse extends AppCompatActivity
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner2.setAdapter(adapter2);
+
+        Spinner spinner3 = (Spinner)
+                findViewById(R.id.formaal_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
+                R.array.formaal_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner3.setAdapter(adapter3);
+
+        Spinner spinner4 = (Spinner)
+                findViewById(R.id.varighed_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(this,
+                R.array.varighed_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner4.setAdapter(adapter4);
     }
 
     @Override
