@@ -92,7 +92,6 @@ public class Anmodning extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.anmodning, menu);
         return true;
     }
 
@@ -103,11 +102,6 @@ public class Anmodning extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -117,17 +111,17 @@ public class Anmodning extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_giv_lov) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_bed_om_lov) {
 
-        } else if (id == R.id.nav_tools) {
+        } else if (id == R.id.nav_mine_tilladelser) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_inviter) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_brugere_og_virksomheder) {
+
+        } else if (id == R.id.nav_indstillinger) {
 
         }
 
