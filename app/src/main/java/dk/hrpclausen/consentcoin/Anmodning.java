@@ -33,6 +33,9 @@ public class Anmodning extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
+        getSupportActionBar().setTitle("Consentcoin");
+
         Spinner spinner2 = (Spinner)
                 findViewById(R.id.virksomhed_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
@@ -42,8 +45,38 @@ public class Anmodning extends AppCompatActivity
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner2.setAdapter(adapter2);
-        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
-        getSupportActionBar().setTitle("Consentcoin");
+
+        Spinner spinner5 = (Spinner)
+                findViewById(R.id.personer_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(this,
+                R.array.personer_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner5.setAdapter(adapter5);
+
+        Spinner spinner6 = (Spinner)
+                findViewById(R.id.formaal_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(this,
+                R.array.formaal_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner6.setAdapter(adapter6);
+
+        Spinner spinner7 = (Spinner)
+                findViewById(R.id.varighed_spinner);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter7 = ArrayAdapter.createFromResource(this,
+                R.array.varighed_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter7.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner7.setAdapter(adapter7);
+
+
     }
 
     @Override
@@ -59,7 +92,6 @@ public class Anmodning extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.anmodning, menu);
         return true;
     }
 
@@ -70,11 +102,6 @@ public class Anmodning extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -84,17 +111,17 @@ public class Anmodning extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_giv_lov) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_bed_om_lov) {
 
-        } else if (id == R.id.nav_tools) {
+        } else if (id == R.id.nav_mine_tilladelser) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_inviter) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_brugere_og_virksomheder) {
+
+        } else if (id == R.id.nav_indstillinger) {
 
         }
 
