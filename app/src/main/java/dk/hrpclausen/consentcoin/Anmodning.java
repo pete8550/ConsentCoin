@@ -42,6 +42,8 @@ public class Anmodning extends AppCompatActivity
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner2.setAdapter(adapter2);
+        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
+        getSupportActionBar().setTitle("Consentcoin");
     }
 
     @Override

@@ -12,7 +12,8 @@
         <activity
             android:name=".Anmodning"
             android:label="@string/title_activity_anmodning"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".GivTilladelse"
             android:label="@string/title_activity_giv_tilladelse"
