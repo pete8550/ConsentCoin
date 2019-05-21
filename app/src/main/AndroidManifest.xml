@@ -17,11 +17,7 @@
         <activity
             android:name=".GivTilladelse"
             android:label="@string/title_activity_giv_tilladelse"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="dk.hrpclausen.consentcoin.MainActivity" />
         </activity>
         <activity
             android:name=".MainActivity"
