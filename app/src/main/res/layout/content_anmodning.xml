@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Anmodning"
     tools:showIn="@layout/app_bar_anmodning">
@@ -23,6 +24,7 @@
 
         <Spinner
             android:layout_width="151dp"
+            android:id="@+id/virksomhed_spinner"
             android:layout_height="36dp"
             android:layout_marginStart="80dp"
             android:layout_marginLeft="80dp"
