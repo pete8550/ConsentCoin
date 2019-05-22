@@ -37,10 +37,9 @@ public class GivTilladelse extends AppCompatActivity
                 Snackbar.make(view, "Samtykke sendt", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 // Write a message to the database
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("Consents");
-                Person p = new Person("Andras");
-                myRef.setValue(p.getName());
+               Person p = new Person("Andras");
+                Database database = new Database();
+                database.pushToDatabase(p.getName());
 
             }
 
