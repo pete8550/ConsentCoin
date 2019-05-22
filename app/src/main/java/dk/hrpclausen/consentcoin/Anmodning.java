@@ -1,5 +1,6 @@
 package dk.hrpclausen.consentcoin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -113,7 +114,13 @@ public class Anmodning extends AppCompatActivity
 
         if (id == R.id.nav_giv_lov) {
 
+            Intent intent = new Intent(this, GivTilladelse.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_bed_om_lov) {
+
+            Intent intent = new Intent(this, Anmodning.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_mine_tilladelser) {
 
