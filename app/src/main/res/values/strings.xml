@@ -8,8 +8,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_giv_lov">Giv tilladelse</string>
-    <string name="menu_bed_om_lov">Anmod om tilladelse</string>
+    <string name="menu_giv_tilladelse">Giv tilladelse</string>
+    <string name="menu_anmod_om_tilladelse">Anmod om tilladelse</string>
     <string name="menu_mine_tilladelser">Mine tilladelser</string>
     <string name="menu_inviter">Inviter</string>
     <string name="menu_brugere_og_virksomheder">Brugere og virksomheder</string>

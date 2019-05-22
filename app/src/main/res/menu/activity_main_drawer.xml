@@ -5,13 +5,13 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_giv_lov"
+            android:id="@+id/nav_giv_tilladelse"
             android:icon="?attr/actionModeShareDrawable"
-            android:title="@string/menu_giv_lov" />
+            android:title="@string/menu_giv_tilladelse" />
         <item
-            android:id="@+id/nav_bed_om_lov"
+            android:id="@+id/nav_anmod_om_tilladelse"
             android:icon="?attr/actionModeShareDrawable"
-            android:title="@string/menu_bed_om_lov" />
+            android:title="@string/menu_anmod_om_tilladelse" />
         <item
             android:id="@+id/nav_mine_tilladelser"
             android:icon="?attr/actionModeShareDrawable"

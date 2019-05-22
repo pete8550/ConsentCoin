@@ -112,12 +112,12 @@ public class Anmodning extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_giv_lov) {
+        if (id == R.id.nav_giv_tilladelse) {
 
             Intent intent = new Intent(this, GivTilladelse.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_bed_om_lov) {
+        } else if (id == R.id.nav_anmod_om_tilladelse) {
 
             Intent intent = new Intent(this, Anmodning.class);
             startActivity(intent);
