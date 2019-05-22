@@ -5,24 +5,24 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_giv_lov"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_giv_lov" />
+            android:id="@+id/nav_giv_tilladelse"
+            android:icon="?attr/actionModeShareDrawable"
+            android:title="@string/menu_giv_tilladelse" />
         <item
-            android:id="@+id/nav_bed_om_lov"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_bed_om_lov" />
+            android:id="@+id/nav_anmod_om_tilladelse"
+            android:icon="?attr/actionModeShareDrawable"
+            android:title="@string/menu_anmod_om_tilladelse" />
         <item
             android:id="@+id/nav_mine_tilladelser"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="?attr/actionModeShareDrawable"
             android:title="@string/menu_mine_tilladelser" />
         <item
             android:id="@+id/nav_inviter"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="?attr/actionModeShareDrawable"
             android:title="@string/menu_inviter" />
         <item
             android:id="@+id/nav_brugere_og_virksomheder"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="?attr/actionModeShareDrawable"
             android:title="@string/menu_brugere_og_virksomheder" />
         <item
             android:id="@+id/nav_indstillinger"

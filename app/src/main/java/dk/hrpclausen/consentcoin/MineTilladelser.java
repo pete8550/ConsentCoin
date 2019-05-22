@@ -14,18 +14,26 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
-public class Anmodning extends AppCompatActivity
+public class MineTilladelser extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anmodning);
+        setContentView(R.layout.activity_mine_tilladelser);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
+        getSupportActionBar().setTitle("Consentcoin");
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -33,51 +41,6 @@ public class Anmodning extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
-        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
-        getSupportActionBar().setTitle("Consentcoin");
-
-        Spinner spinner2 = (Spinner)
-                findViewById(R.id.virksomhed_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
-                R.array.virksomhed_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        spinner2.setAdapter(adapter2);
-
-        Spinner spinner5 = (Spinner)
-                findViewById(R.id.personer_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(this,
-                R.array.personer_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
-        adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        spinner5.setAdapter(adapter5);
-
-        Spinner spinner6 = (Spinner)
-                findViewById(R.id.formaal_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(this,
-                R.array.formaal_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
-        adapter6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        spinner6.setAdapter(adapter6);
-
-        Spinner spinner7 = (Spinner)
-                findViewById(R.id.varighed_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter7 = ArrayAdapter.createFromResource(this,
-                R.array.varighed_array, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
-        adapter7.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        spinner7.setAdapter(adapter7);
-
-
     }
 
     @Override
