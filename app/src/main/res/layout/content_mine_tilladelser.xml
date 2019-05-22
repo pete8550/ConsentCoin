@@ -15,7 +15,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="148dp"
         android:gravity="center"
-        android:text="Du har ingen samtykker"
+        android:id="@+id/Samtykker"
         android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
