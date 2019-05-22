@@ -57,7 +57,7 @@ public class MineTilladelser extends AppCompatActivity
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Consents");
-        int gg = 2;
+
 
         ChildEventListener childEventListener = new ChildEventListener() {
             @Override
