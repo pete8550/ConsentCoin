@@ -145,9 +145,9 @@ public class GivTilladelse extends AppCompatActivity
             Intent intent = new Intent(this, MineTilladelser.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_inviter) {
-
-        } else if (id == R.id.nav_brugere_og_virksomheder) {
+        } else if (id == R.id.nav_sendteanmodninger) {
+            Intent intent = new Intent(this, SendteAnmodninger.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_indstillinger) {
 

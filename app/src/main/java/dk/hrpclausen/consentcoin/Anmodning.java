@@ -17,6 +17,9 @@ import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Anmodning extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -26,18 +29,8 @@ public class Anmodning extends AppCompatActivity
         setContentView(R.layout.activity_anmodning);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
 
-        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
-        getSupportActionBar().setTitle("Consentcoin");
-
-        Spinner spinner2 = (Spinner)
+        final Spinner spinner2 = (Spinner)
                 findViewById(R.id.virksomhed_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
@@ -47,7 +40,7 @@ public class Anmodning extends AppCompatActivity
 // Apply the adapter to the spinner
         spinner2.setAdapter(adapter2);
 
-        Spinner spinner5 = (Spinner)
+        final Spinner spinner5 = (Spinner)
                 findViewById(R.id.personer_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(this,
@@ -57,7 +50,7 @@ public class Anmodning extends AppCompatActivity
 // Apply the adapter to the spinner
         spinner5.setAdapter(adapter5);
 
-        Spinner spinner6 = (Spinner)
+        final Spinner spinner6 = (Spinner)
                 findViewById(R.id.formaal_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(this,
@@ -67,7 +60,7 @@ public class Anmodning extends AppCompatActivity
 // Apply the adapter to the spinner
         spinner6.setAdapter(adapter6);
 
-        Spinner spinner7 = (Spinner)
+        final Spinner spinner7 = (Spinner)
                 findViewById(R.id.varighed_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter7 = ArrayAdapter.createFromResource(this,
@@ -77,6 +70,32 @@ public class Anmodning extends AppCompatActivity
 // Apply the adapter to the spinner
         spinner7.setAdapter(adapter7);
 
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Samtykke sendt", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                // Write a message to the database
+                Database database = new Database();
+
+                database.pushToDatabase(spinner2.getSelectedItem().toString() + " har sendt en anmodning til " +
+                        spinner5.getSelectedItem().toString() + " om at bruge billeder til " +
+                        spinner6.getSelectedItem().toString() + " i " +
+                        spinner7.getSelectedItem().toString());
+            }
+
+        });
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
+        getSupportActionBar().setTitle("Consentcoin");
 
     }
 
@@ -127,9 +146,10 @@ public class Anmodning extends AppCompatActivity
             Intent intent = new Intent(this, MineTilladelser.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_inviter) {
+        } else if (id == R.id.nav_sendteanmodninger) {
 
-        } else if (id == R.id.nav_brugere_og_virksomheder) {
+            Intent intent = new Intent(this, SendteAnmodninger.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_indstillinger) {
 
