@@ -30,31 +30,7 @@ public class GivTilladelse extends AppCompatActivity
         setContentView(R.layout.activity_giv_tilladelse);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Samtykke sendt", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                // Write a message to the database
-               Person p = new Person("Andras");
-                Database database = new Database();
-                database.pushToDatabase(p.getName());
-
-            }
-
-        });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
-        getSupportActionBar().setTitle("Consentcoin");
-
-        Spinner spinner = (Spinner)
+        final Spinner spinner = (Spinner)
                 findViewById(R.id.brugernavn_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -93,7 +69,34 @@ public class GivTilladelse extends AppCompatActivity
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner4.setAdapter(adapter4);
+
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Samtykke sendt", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                // Write a message to the database
+                Database database = new Database();
+                database.pushToDatabase(spinner.getSelectedItem().toString());
+
+            }
+
+        });
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
+        getSupportActionBar().setTitle("Consentcoin");
+
+
     }
+
 
     @Override
     public void onBackPressed() {
