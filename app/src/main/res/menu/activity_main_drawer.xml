@@ -6,23 +6,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_giv_tilladelse"
-            android:icon="?attr/actionModeShareDrawable"
+            android:icon="@drawable/ic_menu_giv_tilladelse"
             android:title="@string/menu_giv_tilladelse" />
         <item
             android:id="@+id/nav_anmod_om_tilladelse"
-            android:icon="?attr/actionModeShareDrawable"
+            android:icon="@drawable/ic_menu_anmod_om_tilladelse"
             android:title="@string/menu_anmod_om_tilladelse" />
         <item
             android:id="@+id/nav_mine_tilladelser"
-            android:icon="?attr/actionModeShareDrawable"
+            android:icon="@drawable/ic_menu_mine_tilladelser"
             android:title="@string/menu_mine_tilladelser" />
         <item
             android:id="@+id/nav_sendteanmodninger"
-            android:icon="?attr/actionModeShareDrawable"
+            android:icon="@drawable/ic_menu_sendte_anmodninger"
             android:title="@string/menu_sendteanmodninger" />
         <item
             android:id="@+id/nav_indstillinger"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_menu_indstillinger"
             android:title="@string/menu_indstillinger" />
     </group>
 </menu>
