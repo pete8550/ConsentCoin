@@ -2,7 +2,6 @@ package dk.hrpclausen.consentcoin;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -25,35 +24,33 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import org.w3c.dom.Text;
-
-public class MineTilladelser extends AppCompatActivity
+public class SendteAnmodninger extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mine_tilladelser);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
-        getSupportActionBar().setTitle("Consentcoin");
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_sendte_anmodninger);
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+            toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
+            getSupportActionBar().setTitle("Consentcoin");
 
+            FloatingActionButton fab = findViewById(R.id.fab);
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            });
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            NavigationView navigationView = findViewById(R.id.nav_view);
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawer.addDrawerListener(toggle);
+            toggle.syncState();
+            navigationView.setNavigationItemSelectedListener(this);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Consents");
@@ -63,7 +60,7 @@ public class MineTilladelser extends AppCompatActivity
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String text = dataSnapshot.getValue().toString();
-                TextView textView = findViewById(R.id.Samtykker);
+                TextView textView = findViewById(R.id.sendteAnmodninger);
                 textView.append(text + "\n");
             }
 
@@ -88,10 +85,7 @@ public class MineTilladelser extends AppCompatActivity
             }
         };
         myRef.addChildEventListener(childEventListener);
-}
-
-
-
+    }
 
 
     @Override
@@ -107,6 +101,7 @@ public class MineTilladelser extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
         return true;
     }
 
@@ -117,8 +112,11 @@ public class MineTilladelser extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        return super.onOptionsItemSelected(item);
-    }
+        //noinspection SimplifiableIfStatement
+
+            return true;
+        }
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

@@ -17,13 +17,9 @@
             android:icon="?attr/actionModeShareDrawable"
             android:title="@string/menu_mine_tilladelser" />
         <item
-            android:id="@+id/nav_inviter"
+            android:id="@+id/nav_sendteanmodninger"
             android:icon="?attr/actionModeShareDrawable"
-            android:title="@string/menu_inviter" />
-        <item
-            android:id="@+id/nav_brugere_og_virksomheder"
-            android:icon="?attr/actionModeShareDrawable"
-            android:title="@string/menu_brugere_og_virksomheder" />
+            android:title="@string/menu_sendteanmodninger" />
         <item
             android:id="@+id/nav_indstillinger"
             android:icon="@drawable/ic_menu_share"

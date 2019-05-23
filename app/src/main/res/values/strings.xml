@@ -11,7 +11,7 @@
     <string name="menu_giv_tilladelse">Giv tilladelse</string>
     <string name="menu_anmod_om_tilladelse">Anmod om tilladelse</string>
     <string name="menu_mine_tilladelser">Mine tilladelser</string>
-    <string name="menu_inviter">Inviter</string>
+    <string name="menu_sendteanmodninger">Sendte anmodninger</string>
     <string name="menu_brugere_og_virksomheder">Brugere og virksomheder</string>
     <string name="menu_indstillinger">Indstillinger</string>
     <string name="title_activity_anmodning">Anmodning</string>
@@ -22,5 +22,6 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="title_activity_sendte_anmodninger">SendteAnmodninger</string>
 
 </resources>
