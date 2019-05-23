@@ -40,7 +40,7 @@ public class GivTilladelse extends AppCompatActivity
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
-        Spinner spinner2 = (Spinner)
+        final Spinner spinner2 = (Spinner)
                 findViewById(R.id.virksomhed_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
@@ -50,7 +50,7 @@ public class GivTilladelse extends AppCompatActivity
 // Apply the adapter to the spinner
         spinner2.setAdapter(adapter2);
 
-        Spinner spinner3 = (Spinner)
+        final Spinner spinner3 = (Spinner)
                 findViewById(R.id.formaal_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
@@ -60,7 +60,7 @@ public class GivTilladelse extends AppCompatActivity
 // Apply the adapter to the spinner
         spinner3.setAdapter(adapter3);
 
-        Spinner spinner4 = (Spinner)
+        final Spinner spinner4 = (Spinner)
                 findViewById(R.id.varighed_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(this,
@@ -79,7 +79,7 @@ public class GivTilladelse extends AppCompatActivity
                         .setAction("Action", null).show();
                 // Write a message to the database
                 Database database = new Database();
-                database.pushToDatabase(spinner.getSelectedItem().toString());
+                database.pushToDatabase(spinner.getSelectedItem().toString() + " har givet tilladelse til " + spinner2.getSelectedItem().toString() +" til at bruge sine billeder til " + spinner3.getSelectedItem().toString() + " i " + spinner4.getSelectedItem().toString());
 
             }
 

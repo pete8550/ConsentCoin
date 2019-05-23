@@ -16,7 +16,7 @@
         android:layout_marginTop="148dp"
         android:gravity="center"
         android:id="@+id/Samtykker"
-        android:textSize="40sp"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
