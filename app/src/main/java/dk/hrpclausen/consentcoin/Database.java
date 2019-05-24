@@ -12,4 +12,9 @@ public class Database {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Consents");
         databaseReference.push().setValue(text);
     }
+
+    public void pushToDatabaseAnmodning(String text) {
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Anmodninger");
+        databaseReference.push().setValue(text);
+    }
 }

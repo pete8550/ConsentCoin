@@ -53,7 +53,7 @@ public class SendteAnmodninger extends AppCompatActivity
             navigationView.setNavigationItemSelectedListener(this);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Consents");
+        DatabaseReference myRef = database.getReference("Anmodninger");
 
 
         ChildEventListener childEventListener = new ChildEventListener() {
