@@ -79,7 +79,7 @@ public class GivTilladelse extends AppCompatActivity
                         .setAction("Action", null).show();
                 // Write a message to the database
                 Database database = new Database();
-                database.pushToDatabase(spinner.getSelectedItem().toString() + " har givet tilladelse til " + spinner2.getSelectedItem().toString() +" til at bruge sine billeder til " + spinner3.getSelectedItem().toString() + " i " + spinner4.getSelectedItem().toString());
+                database.pushToDatabaseConsent(spinner.getSelectedItem().toString() + " har givet tilladelse til " + spinner2.getSelectedItem().toString() +" til at bruge sine billeder til " + spinner3.getSelectedItem().toString() + " i " + spinner4.getSelectedItem().toString());
 
             }
 
