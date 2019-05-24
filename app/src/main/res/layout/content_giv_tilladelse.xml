@@ -7,7 +7,7 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".GivTilladelse"
-    android:background="@drawable/consent_coin_content_bg"
+    android:background="@drawable/consent_coin_content2_bg"
     tools:showIn="@layout/app_bar_giv_tilladelse">
 
 
