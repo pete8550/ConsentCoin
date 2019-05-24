@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".SendteAnmodninger"
+    android:background="@drawable/consent_coin_content_bg"
     tools:showIn="@layout/app_bar_sendte_anmodninger">
 
 

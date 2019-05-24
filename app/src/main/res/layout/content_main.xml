@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
+    android:background="@drawable/consent_coin_bg"
     tools:showIn="@layout/app_bar_main">
 
     <EditText
@@ -13,6 +14,8 @@
         android:layout_height="wrap_content"
         android:hint="Skriv et brugernavn"
         android:fontFamily="@font/notosans"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
         android:textSize="16sp"
         android:backgroundTint="@color/colorConsent"
 
