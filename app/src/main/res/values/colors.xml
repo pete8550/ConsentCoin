@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">#FDFDFF</color>
     <color name="colorPrimaryDark">#95989A</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#47731b</color>
     <color name="colorConsent">#76BF2D</color>
     <color name="drawerIconColor">#02111B</color>
-    <color name="colorRequest">#E83212</color>
+    <color name="colorRequest">#47731b</color>
 </resources>
