@@ -8,7 +8,7 @@ public class Database {
     private DatabaseReference databaseReference;
 
 
-    public void pushToDatabase(String text) {
+    public void pushToDatabaseConsent(String text) {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Consents");
         databaseReference.push().setValue(text);
     }
