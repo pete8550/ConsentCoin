@@ -7,7 +7,7 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".GivTilladelse"
-    android:background="@drawable/consent_coin_content2_bg"
+    android:background="@drawable/consent_coin_bg"
     tools:showIn="@layout/app_bar_giv_tilladelse">
 
 
@@ -15,6 +15,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#fff"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="64dp"
@@ -46,6 +47,7 @@
         android:id="@+id/textView2"
         android:layout_width="127dp"
         android:layout_height="40dp"
+        android:textColor="#fff"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="168dp"
@@ -71,6 +73,7 @@
         android:id="@+id/textView5"
         android:layout_width="162dp"
         android:layout_height="75dp"
+        android:textColor="#fff"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="284dp"
@@ -97,6 +100,7 @@
         android:id="@+id/textView6"
         android:layout_width="113dp"
         android:layout_height="55dp"
+        android:textColor="#fff"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="444dp"

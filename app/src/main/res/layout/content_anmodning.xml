@@ -7,7 +7,7 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Anmodning"
-    android:background="@drawable/consent_coin_content2_bg"
+    android:background="@drawable/consent_coin_bg"
     tools:showIn="@layout/app_bar_anmodning">
 
     <TextView
@@ -17,6 +17,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="64dp"
+        android:textColor="#fff"
         android:layout_weight="1"
         android:text="Vi på "
         android:textSize="20dp"
@@ -42,6 +43,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="197dp"
         android:layout_marginBottom="49dp"
+        android:textColor="#fff"
         android:text="ønsker at bruge billeder af"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
@@ -62,6 +64,7 @@
         android:id="@+id/textView8"
         android:layout_width="53dp"
         android:layout_height="51dp"
+        android:textColor="#fff"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="68dp"
@@ -84,6 +87,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="23dp"
+        android:textColor="#fff"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="472dp"
