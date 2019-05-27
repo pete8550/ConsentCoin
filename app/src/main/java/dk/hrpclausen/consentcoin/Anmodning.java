@@ -83,7 +83,7 @@ public class Anmodning extends AppCompatActivity
                 database.pushToDatabaseAnmodning(spinner2.getSelectedItem().toString() + " har sendt en anmodning til " +
                         spinner5.getSelectedItem().toString() + " om at bruge billeder til " +
                         spinner6.getSelectedItem().toString() + " i " +
-                        spinner7.getSelectedItem().toString());
+                        spinner7.getSelectedItem().toString() + "\n");
             }
 
         });
