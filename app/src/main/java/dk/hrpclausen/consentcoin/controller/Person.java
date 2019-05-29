@@ -1,4 +1,4 @@
-package dk.hrpclausen.consentcoin.model;
+package dk.hrpclausen.consentcoin.controller;
 
 public class Person extends Bruger {
 
@@ -10,11 +10,6 @@ public class Person extends Bruger {
 
     public void setCpr(String cpr) {
         this.cpr = cpr;
-    }
-
-
-    public Person() {
-
     }
 
 }
