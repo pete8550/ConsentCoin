@@ -10,23 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SendteAnmodninger"
+            android:name=".view.SendteAnmodninger"
             android:label="@string/title_activity_sendte_anmodninger"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".MineTilladelser"
+            android:name=".view.MineTilladelser"
             android:label="@string/title_activity_mine_tilladelser"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Anmodning"
+            android:name=".view.Anmodning"
             android:label="@string/title_activity_anmodning"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GivTilladelse"
+            android:name=".view.GivTilladelse"
             android:label="@string/title_activity_giv_tilladelse"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

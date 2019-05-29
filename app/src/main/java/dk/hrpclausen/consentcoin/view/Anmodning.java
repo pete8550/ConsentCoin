@@ -1,4 +1,4 @@
-package dk.hrpclausen.consentcoin;
+package dk.hrpclausen.consentcoin.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,8 +17,9 @@ import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import dk.hrpclausen.consentcoin.R;
+import dk.hrpclausen.consentcoin.model.DatabaseDAO;
+import dk.hrpclausen.consentcoin.model.FirebaseDAO;
 
 public class Anmodning extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -77,10 +78,10 @@ public class Anmodning extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Samtykke sendt", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                // Write a message to the database
-                Database database = new Database();
+                // Write a message to the firebaseDAO
+                DatabaseDAO firebaseDAO = new FirebaseDAO();
 
-                database.pushToDatabaseAnmodning(spinner2.getSelectedItem().toString() + " har sendt en anmodning til " +
+                firebaseDAO.pushToDatabaseAnmodning(spinner2.getSelectedItem().toString() + " har sendt en anmodning til " +
                         spinner5.getSelectedItem().toString() + " om at bruge billeder til " +
                         spinner6.getSelectedItem().toString() + " i " +
                         spinner7.getSelectedItem().toString() + "\n");
