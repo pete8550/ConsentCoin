@@ -1,13 +1,9 @@
-package dk.hrpclausen.consentcoin;
+package dk.hrpclausen.consentcoin.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
@@ -25,7 +21,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import org.w3c.dom.Text;
+import dk.hrpclausen.consentcoin.R;
 
 public class MineTilladelser extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

@@ -1,10 +1,9 @@
-package dk.hrpclausen.consentcoin;
+package dk.hrpclausen.consentcoin.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.util.Log;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,8 +17,8 @@ import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import dk.hrpclausen.consentcoin.R;
+import dk.hrpclausen.consentcoin.model.FirebaseDAO;
 
 public class GivTilladelse extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -77,9 +76,9 @@ public class GivTilladelse extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Samtykke sendt", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                // Write a message to the database
-                Database database = new Database();
-                database.pushToDatabaseConsent(spinner.getSelectedItem().toString() +
+                // Write a message to the firebaseDAO
+                FirebaseDAO firebaseDAO = new FirebaseDAO();
+                firebaseDAO.pushToDatabaseConsent(spinner.getSelectedItem().toString() +
                         " har givet tilladelse til " + spinner2.getSelectedItem().toString() +
                         " til at bruge sine billeder til " + spinner3.getSelectedItem().toString() +
                         " i " +

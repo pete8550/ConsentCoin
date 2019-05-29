@@ -1,4 +1,4 @@
-package dk.hrpclausen.consentcoin;
+package dk.hrpclausen.consentcoin.model;
 
 public class Person {
 
