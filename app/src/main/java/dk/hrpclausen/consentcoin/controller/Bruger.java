@@ -1,4 +1,4 @@
-package dk.hrpclausen.consentcoin.model;
+package dk.hrpclausen.consentcoin.controller;
 
 public class Bruger {
 

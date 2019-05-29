@@ -1,6 +1,9 @@
-package dk.hrpclausen.consentcoin.model;
+package dk.hrpclausen.consentcoin.controller;
 
 public class Virksomhed extends Bruger {
+
+    String CVR;
+
     public String getCVR() {
         return CVR;
     }
@@ -9,6 +12,6 @@ public class Virksomhed extends Bruger {
         this.CVR = CVR;
     }
 
-    String CVR;
+
 
 }
