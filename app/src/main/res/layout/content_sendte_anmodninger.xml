@@ -11,11 +11,11 @@
 
     <ScrollView
         android:layout_width="366dp"
-        android:layout_height="630dp"
+        android:layout_height="600dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginRight="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
