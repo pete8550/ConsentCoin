@@ -30,7 +30,7 @@ title __VIEW's Class Diagram__\n
 
   package dk.hrpclausen.consentcoin {
     package dk.hrpclausen.consentcoin.view {
-      class MainActivity {
+      class Login {
           # onCreate()
           + onBackPressed()
           + onNavigationItemSelected()
