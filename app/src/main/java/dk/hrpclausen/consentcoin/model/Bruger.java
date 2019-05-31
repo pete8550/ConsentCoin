@@ -2,9 +2,9 @@ package dk.hrpclausen.consentcoin.model;
 
 public class Bruger {
 
-   public int nummer;
-   public String navn;
-   public  String email;
+   private int nummer;
+   private String navn;
+   private String email;
 
     public int getNummer() {
         return nummer;
