@@ -5,14 +5,16 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseDAO implements DatabaseDAO {
 
+    // ny Databasereference variabel kaldet databaseReference
     private DatabaseReference databaseReference;
 
 
+    // en void metode der tager imod parametrene String Text, og sender til firebase database "Consents"
     public void pushToDatabaseConsent(String text) {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Consents");
         databaseReference.push().setValue(text);
     }
-
+    // en void metode der tager imod parametrene String Text, og sender til firebase database "Anmodninger"
     public void pushToDatabaseAnmodning(String text) {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Anmodninger");
         databaseReference.push().setValue(text);

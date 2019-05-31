@@ -12,10 +12,5 @@ public class Person extends Bruger {
         this.cpr = cpr;
     }
 
-
-    public Person() {
-
-    }
-
 }
 
