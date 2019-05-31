@@ -13,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 
 import dk.hrpclausen.consentcoin.R;
 
-public class MainActivity extends AppCompatActivity
+public class Login extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
