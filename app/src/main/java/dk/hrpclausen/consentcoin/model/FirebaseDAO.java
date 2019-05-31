@@ -17,4 +17,5 @@ public class FirebaseDAO implements DatabaseDAO {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Anmodninger");
         databaseReference.push().setValue(text);
     }
+
 }
