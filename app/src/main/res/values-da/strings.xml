@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ConsentCoin</string>
+    <string name="menu_anmod_om_tilladelse">Anmod om tilladelse</string>
+    <string name="menu_brugere_og_virksomheder">Brugere og virksomheder</string>
+    <string name="menu_gallery">Galleri</string>
+    <string name="menu_giv_tilladelse">Giv tilladelse</string>
+    <string name="menu_home">Hjem</string>
+    <string name="menu_indstillinger">Indstillinger</string>
+    <string name="menu_mine_tilladelser">Mine tilladelser</string>
+    <string name="menu_send">Send</string>
+    <string name="menu_sendteanmodninger">Sendte anmodninger</string>
+    <string name="menu_share">Del</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Redskaber</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_anmodning">Andmodning</string>
+    <string name="title_activity_giv_tilladelse">GivTilladelse</string>
+    <string name="title_activity_mine_tilladelser">MineTilladelser</string>
+    <string name="title_activity_sendte_anmodninger">SendteAnmodninger</string>
+</resources>
