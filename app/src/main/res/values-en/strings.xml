@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_anmod_om_tilladelse">Request permission</string>
+    <string name="menu_brugere_og_virksomheder">Users and businesses</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_giv_tilladelse">Give permission</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_indstillinger">Settings</string>
+    <string name="menu_mine_tilladelser">My consents</string>
+    <string name="menu_send">Send</string>
+    <string name="menu_sendteanmodninger">Send requests</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_anmodning">Request</string>
+    <string name="title_activity_giv_tilladelse">GiveConsent</string>
+    <string name="title_activity_mine_tilladelser">MyConsents</string>
+    <string name="title_activity_sendte_anmodninger">SendRequests</string>
+</resources>
