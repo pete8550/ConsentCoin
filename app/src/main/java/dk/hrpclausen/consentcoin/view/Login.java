@@ -2,6 +2,8 @@ package dk.hrpclausen.consentcoin.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
@@ -10,12 +12,17 @@ import android.support.v4.widget.DrawerLayout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.EditText;
 
 import dk.hrpclausen.consentcoin.R;
+import dk.hrpclausen.consentcoin.model.DatabaseDAO;
+import dk.hrpclausen.consentcoin.model.FirebaseDAO;
 
 //Login-klasse som er den første activity brugeren ser når appen åbnes
 public class Login extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
 
     //override metode der minder meget om PSVM i Java
     //Uden denne metode ville activitiet ikke kunne åbnes
@@ -29,6 +36,25 @@ public class Login extends AppCompatActivity
         setSupportActionBar(toolbar);
         toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
         getSupportActionBar().setTitle("Consentcoin");
+
+        // Edittext oprettet
+        final EditText brugernavn = (EditText) findViewById(R.id.brugernavn);
+
+        // floating actionbutton, der sender besked fra edittext - til firebase i child Brugere
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Bruger oprettet", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+                // Skriver en besked til vores firebaseDAO
+
+                DatabaseDAO firebaseDAO = new FirebaseDAO();
+                firebaseDAO.pushToDatabaseBruger(brugernavn.getText().toString());
+            }
+
+        });
 
         //Her vises det at der er en drawer-menu for denne activity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
