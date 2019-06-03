@@ -1,5 +1,6 @@
 package dk.hrpclausen.consentcoin.view;
 
+// importerede biblioteker
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -21,66 +22,75 @@ import dk.hrpclausen.consentcoin.R;
 import dk.hrpclausen.consentcoin.model.DatabaseDAO;
 import dk.hrpclausen.consentcoin.model.FirebaseDAO;
 
+// en public klasse Anmodning der er nedarvet fra AppCompatActivity og implementere NavigationView.OnNavigationItemSelectedListener
 public class Anmodning extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    // en Overrided void metode fra parentklassen, med Bundle objekt savedInstanceState som parameter.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // setContentView metode kald, der tager et layout fra ressources som parameter.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anmodning);
+        // nyt toolbar objekt fra ressource id toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
+        //metode kald fra parentclass hvor der indsættes ovenstående toolbar som parameter.
         setSupportActionBar(toolbar);
 
+        // Spinner objekter oprettes der hver især tager imod forskellige arrays
         final Spinner spinner2 = (Spinner)
                 findViewById(R.id.virksomhed_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
+// Laver en ArrayAdapter der bruger string arrayet, og vores custom spinner layout.
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
                 R.array.virksomhed_array, R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+// Specificere layoutet der skal bruges når der vises de forskellige valgmuligheder
         adapter2.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+// Sætter adapteren på Spinneren
         spinner2.setAdapter(adapter2);
 
         final Spinner spinner5 = (Spinner)
                 findViewById(R.id.personer_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
+// Laver en ArrayAdapter der bruger string arrayet, og vores custom spinner layout.
         ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(this,
                 R.array.personer_array, R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+// Specificere layoutet der skal bruges når der vises de forskellige valgmuligheder
         adapter5.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+// Sætter adapteren på Spinneren
         spinner5.setAdapter(adapter5);
 
         final Spinner spinner6 = (Spinner)
                 findViewById(R.id.formaal_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
+// Laver en ArrayAdapter der bruger string arrayet, og vores custom spinner layout.
         ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(this,
                 R.array.formaal_array, R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+// Specificere layoutet der skal bruges når der vises de forskellige valgmuligheder
         adapter6.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+// Sætter adapteren på Spinneren
         spinner6.setAdapter(adapter6);
 
         final Spinner spinner7 = (Spinner)
                 findViewById(R.id.varighed_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
+// Laver en ArrayAdapter der bruger string arrayet, og vores custom spinner layout.
         ArrayAdapter<CharSequence> adapter7 = ArrayAdapter.createFromResource(this,
                 R.array.varighed_array, R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+// Specificere layoutet der skal bruges når der vises de forskellige valgmuligheder
         adapter7.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+// Sætter adapteren på Spinneren
         spinner7.setAdapter(adapter7);
 
 
+        // et nyt FloatingActionButton kaldet fab, der får viewet fra ressources.id.fab
         FloatingActionButton fab = findViewById(R.id.fab);
+        // en onClickListener metode, der laver en snackbar med følgende besked
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Samtykke sendt", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 // Write a message to the firebaseDAO
+                // nyt DatabaseDAO objekt fra FirebaseDAO klassen oprettet.
                 DatabaseDAO firebaseDAO = new FirebaseDAO();
-
+                // kalder metoden pushToDataBaseAnmodning fra FirebaseDAO, som tager text fra hver valgt element i spinnerne, + noget String text.
                 firebaseDAO.pushToDatabaseAnmodning(spinner2.getSelectedItem().toString() + " har sendt en anmodning til " +
                         spinner5.getSelectedItem().toString() + " om at bruge billeder til " +
                         spinner6.getSelectedItem().toString() + " i " +
@@ -88,6 +98,7 @@ public class Anmodning extends AppCompatActivity
             }
 
         });
+        // Nyt DrawerLayout objekt
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -99,7 +110,7 @@ public class Anmodning extends AppCompatActivity
         getSupportActionBar().setTitle("Consentcoin");
 
     }
-
+// standard metoder når man opretter acitivity med Navigationdrawer
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -126,7 +137,7 @@ public class Anmodning extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+    // sætter viewet alt efter hvilket element der bliver klikket på i draweren.
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
