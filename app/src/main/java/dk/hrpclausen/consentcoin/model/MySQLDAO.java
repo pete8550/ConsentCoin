@@ -1,5 +1,6 @@
 package dk.hrpclausen.consentcoin.model;
-// Er ikke implementeret
+
+// en ubrugt klasse der implementere interfacet DatabaseDAO og derfor har de samme metoder som den.
 public class MySQLDAO implements DatabaseDAO {
     @Override
     public void pushToDatabaseConsent(String text) {

@@ -1,5 +1,6 @@
 package dk.hrpclausen.consentcoin.model;
 
+//Javaklasse kaldet Virksomhed der nedarver fra Bruger, har 1 variabel String cvr, og getters og setters på den.
 public class Virksomhed extends Bruger {
 
     private String CVR;
