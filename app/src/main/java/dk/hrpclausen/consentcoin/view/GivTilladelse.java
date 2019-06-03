@@ -29,44 +29,37 @@ public class GivTilladelse extends AppCompatActivity
         setContentView(R.layout.activity_giv_tilladelse);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        // opretter en Spinner
         final Spinner spinner = (Spinner)
                 findViewById(R.id.brugernavn_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
+        // Laver en ArrayAdapter ved at bruge string array og vores  simple_spinner_item layout Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.brugernavn_array, R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
+        // Vælger det laylout der skal bruges når listen af valgmuligheder kommer frem Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
+        // Andvender adapteren til spinneren Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
+        // Samme proces som ovenover
         final Spinner spinner2 = (Spinner)
                 findViewById(R.id.virksomhed_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
                 R.array.virksomhed_array, R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
         adapter2.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
         spinner2.setAdapter(adapter2);
 
         final Spinner spinner3 = (Spinner)
                 findViewById(R.id.formaal_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
                 R.array.formaal_array, R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
         adapter3.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
         spinner3.setAdapter(adapter3);
 
         final Spinner spinner4 = (Spinner)
                 findViewById(R.id.varighed_spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(this,
                 R.array.varighed_array, R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
         adapter4.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
         spinner4.setAdapter(adapter4);
 
 
@@ -76,7 +69,7 @@ public class GivTilladelse extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Samtykke sendt", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                // Write a message to the firebaseDAO
+                // Skriver en besked til vores firebaseDAO
                 FirebaseDAO firebaseDAO = new FirebaseDAO();
                 firebaseDAO.pushToDatabaseConsent(spinner.getSelectedItem().toString() +
                         " har givet tilladelse til " + spinner2.getSelectedItem().toString() +
@@ -113,12 +106,14 @@ public class GivTilladelse extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Standard metode når man opretter acitivity med Navigationdrawer
         // Inflate the menu; this adds items to the action bar if it is present.
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Standard metode når man opretter acitivity med Navigationdrawer
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -130,7 +125,7 @@ public class GivTilladelse extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // Håndterer når der bliver klikket på navigation view item Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_giv_tilladelse) {
