@@ -50,8 +50,12 @@ public class MineTilladelser extends AppCompatActivity
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Consents");
 
-
+        //Her instansieres vores childEventListener
         ChildEventListener childEventListener = new ChildEventListener() {
+
+            //Denne metode sætter texten i vores textview som findes i mineTilladelser.
+            //Metoden benytter sig af en listener "onChildAdded" som tager dataen fra vores firebase database og laver det til en string
+            //Derefter tilføjes text til mineTilladelser via "textView.append" og linjen skiftes
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String text = dataSnapshot.getValue().toString();
