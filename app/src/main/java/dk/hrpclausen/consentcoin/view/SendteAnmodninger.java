@@ -24,31 +24,49 @@ import com.google.firebase.database.FirebaseDatabase;
 import dk.hrpclausen.consentcoin.R;
 
 public class SendteAnmodninger extends AppCompatActivity
+
+    // her implementeres androids inbyggede navigationview
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    // her startes activitien, og metoden "onCreate" kører den kode som ligger inde i metoden, når activitien startes
+    //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+
+            // her findes layoutet og det bliver kaldt.
+            // (meotden fra parent klassen "AppCompatActivity" kræver parametre som sættes)
             setContentView(R.layout.activity_sendte_anmodninger);
+
+            // her kaldes toolbaren
             Toolbar toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
+
+            // her sættes titlen, og stilen på denne titel
             toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
             getSupportActionBar().setTitle("Consentcoin");
 
+            // her sættes parametre for vores navigation drawer og layoutet kaldes
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             NavigationView navigationView = findViewById(R.id.nav_view);
+            // her forbindes en listener til knappen på vores activity som tager brugeren til vores navigation drawer
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                     this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             drawer.addDrawerListener(toggle);
             toggle.syncState();
             navigationView.setNavigationItemSelectedListener(this);
 
+            // her kaldes vores firebase database og mere specifik vores path "Andmodninger"
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Anmodninger");
 
 
+        // her instansieres vores childEventListener
         ChildEventListener childEventListener = new ChildEventListener() {
             @Override
+            // denne metode sætter texten i vores textview som findes i sendteAnmodninger.
+            // metoden benytter sig af en listener "onChildAdded" som tager dataen fra vores firebase database og laver det til en string
+            // derefter tilføjes text til sendteAnmodninger via "textView.append" og linjen skiftes
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 String text = dataSnapshot.getValue().toString();
                 TextView textView = findViewById(R.id.sendteAnmodninger);
@@ -79,6 +97,7 @@ public class SendteAnmodninger extends AppCompatActivity
     }
 
 
+    // denne metode sender brugeren tilbage til navigation draweren hvis "back" knappen trykkes på
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -89,13 +108,15 @@ public class SendteAnmodninger extends AppCompatActivity
         }
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflater vores menu; denne metoden kan også tilføje ting til vores menu
         getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
         return true;
     }
 
+    // standard metoder når man opretter acitivity med Navigationdrawer
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -111,25 +132,30 @@ public class SendteAnmodninger extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
+    // Her er metoden som navigerer os rundt i vores app via vores navigation drawer
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        // denne variation sender os skærmen "giv_tilladelse"
         if (id == R.id.nav_giv_tilladelse) {
 
             Intent intent = new Intent(this, GivTilladelse.class);
             startActivity(intent);
 
+            // denne variation sender os skærmen "anmod_om_tilladelse"
         } else if (id == R.id.nav_anmod_om_tilladelse) {
 
             Intent intent = new Intent(this, Anmodning.class);
             startActivity(intent);
 
+            // denne variation sender os skærmen "mine_tilladelser"
         } else if (id == R.id.nav_mine_tilladelser) {
 
             Intent intent = new Intent(this, MineTilladelser.class);
             startActivity(intent);
 
+            // denne variation sender os skærmen "sendteanmodninger"
         } else if (id == R.id.nav_sendteanmodninger) {
             Intent intent = new Intent(this, SendteAnmodninger.class);
             startActivity(intent);
@@ -138,6 +164,7 @@ public class SendteAnmodninger extends AppCompatActivity
 
         }
 
+        // her sættes vores layout til draweren
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
