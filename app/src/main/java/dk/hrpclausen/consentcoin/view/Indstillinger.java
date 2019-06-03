@@ -44,6 +44,8 @@ public class Indstillinger extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
+        getSupportActionBar().setTitle("Consentcoin");
 
 
 
@@ -52,6 +54,8 @@ public class Indstillinger extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 setAppLocale("da");
+                startActivity(new Intent(Indstillinger.this,GivTilladelse.class));
+
             }
         });
 
@@ -61,6 +65,8 @@ public class Indstillinger extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 setAppLocale("en");
+                startActivity(new Intent(Indstillinger.this,GivTilladelse.class));
+
             }
         });
 

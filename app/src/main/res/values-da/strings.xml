@@ -18,4 +18,24 @@
     <string name="title_activity_giv_tilladelse">GivTilladelse</string>
     <string name="title_activity_mine_tilladelser">MineTilladelser</string>
     <string name="title_activity_sendte_anmodninger">SendteAnmodninger</string>
+    <string name="title_activity_indstillinger">Indstillinger</string>
+    <string name="anmodning1">Vi på</string>
+    <string name="anmodning2">ønsker at bruge billeder af</string>
+    <string name="anmodning3">til</string>
+    <string name="anmodning4">de næste</string>
+    <string name="tilladelse1">Jeg</string>
+    <string name="tilladelse2">vil gerne give</string>
+    <string name="tilladelse3">lov til at bruge billeder af mig til</string>
+    <string name="tilladelse4">de næste</string>
+    <string name="Spinner1item1">Markedsføring</string>
+    <string name="Spinner1item2">Internt</string>
+    <string name="Spinner1item3">Hjemmeside</string>
+    <string name="Spinner1item4">Nyhedsbrev</string>
+    <string name="Spinner2item1">1 år</string>
+    <string name="Spinner2item2">2 år</string>
+    <string name="Spinner2item3">5 år</string>
+    <string name="Spinner2item4">10 år</string>
+    <string name="Spinner3item1">Alle studerende</string>
+    <string name="Spinner3item2">Alle lærere</string>
+    <string name="Spinner3item3">Alt personale</string>
 </resources>
