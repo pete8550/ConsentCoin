@@ -162,6 +162,9 @@ public class SendteAnmodninger extends AppCompatActivity
 
         } else if (id == R.id.nav_indstillinger) {
 
+            Intent intent = new Intent(this, Indstillinger.class);
+            startActivity(intent);
+
         }
 
         // her sættes vores layout til draweren

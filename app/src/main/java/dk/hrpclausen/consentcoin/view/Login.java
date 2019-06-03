@@ -106,7 +106,10 @@ public class Login extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_indstillinger) {
-            //Ved klik på indstillinger i draweren åbnes intet da intet intent er sat til at åbne en activity (endnu)
+
+            Intent intent = new Intent(this, Indstillinger.class);
+            startActivity(intent);
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

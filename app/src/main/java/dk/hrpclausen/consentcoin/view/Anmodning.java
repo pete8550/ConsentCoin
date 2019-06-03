@@ -165,6 +165,9 @@ public class Anmodning extends AppCompatActivity
 
         } else if (id == R.id.nav_indstillinger) {
 
+            Intent intent = new Intent(this, Indstillinger.class);
+            startActivity(intent);
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
