@@ -2,6 +2,8 @@ package dk.hrpclausen.consentcoin.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
@@ -10,20 +12,51 @@ import android.support.v4.widget.DrawerLayout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.EditText;
 
 import dk.hrpclausen.consentcoin.R;
+import dk.hrpclausen.consentcoin.model.DatabaseDAO;
+import dk.hrpclausen.consentcoin.model.FirebaseDAO;
 
+//Login-klasse som er den første activity brugeren ser når appen åbnes
 public class Login extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    //override metode der minder meget om PSVM i Java
+    //Uden denne metode ville activitiet ikke kunne åbnes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main); //hvilket XML-layout der anvendes til denne activity
+
+        //Her vises det at der anvendes en toolbar samt hvilken text og text-style der er anvendt
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
         getSupportActionBar().setTitle("Consentcoin");
+
+        // Edittext oprettet
+        final EditText brugernavn = (EditText) findViewById(R.id.brugernavn);
+
+        // floating actionbutton, der sender besked fra edittext - til firebase i child Brugere
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Bruger oprettet", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+                // Skriver en besked til vores firebaseDAO
+
+                DatabaseDAO firebaseDAO = new FirebaseDAO();
+                firebaseDAO.pushToDatabaseBruger(brugernavn.getText().toString());
+            }
+
+        });
+
+        //Her vises det at der er en drawer-menu for denne activity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -31,10 +64,9 @@ public class Login extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
     }
 
-
+    //Denne metode viser hvad der sker, når tilbagepilen klikkes på
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -45,10 +77,11 @@ public class Login extends AppCompatActivity
         }
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+    //Denne metode viser de enkelte items i draweren
+    //Samtidigt er der intents der åbner en pågældende activity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
         int id = item.getItemId();
 
         if (id == R.id.nav_giv_tilladelse) {
@@ -71,28 +104,11 @@ public class Login extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_indstillinger) {
-
+            //Ved klik på indstillinger i draweren åbnes intet da intet intent er sat til at åbne en activity (endnu)
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-
 }
-
-//Disse ting skal designes
-//TODO 1: Slet/usynliggør tekst Cosentcoin
-//TODO 2: Lav en textview i toolbar (xml), og design og placer nyt Consentcoin logo
-//TODO 5: Design næste activity
-//TODO 6: Design menuen ved klik på hamburger ikonet
-
-//Disse ting skal programmeres
-//TODO 3: Ændr teksten i edittext (skriv et brugernavn), så den forsvinder ved skrivning
-//TODO 4: Gør teksten funktionel, opret nyt activity og log ind med funktionaliteten
-
-//Andet der kan laves
-//TODO 7: Kommentér både kode og xml. Intet er dokumenteret endnu
-//TODO 8: Skab mere orden i koden. Både i res og i klasser. Eventuelt lav flere styles, så koden minimeres

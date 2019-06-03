@@ -3,9 +3,11 @@ package dk.hrpclausen.consentcoin.model;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
+// en FirebaseDAO klasse der implementerer interfacet DatabaseDAO
 public class FirebaseDAO implements DatabaseDAO {
 
-    // ny Databasereference variabel kaldet databaseReference
+    // ny Databasereference objekt kaldet databaseReference
     private DatabaseReference databaseReference;
 
 
@@ -17,6 +19,10 @@ public class FirebaseDAO implements DatabaseDAO {
     // en void metode der tager imod parametrene String Text, og sender til firebase database "Anmodninger"
     public void pushToDatabaseAnmodning(String text) {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Anmodninger");
+        databaseReference.push().setValue(text);
+    }
+    public void pushToDatabaseBruger(String text) {
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Brugere");
         databaseReference.push().setValue(text);
     }
 
