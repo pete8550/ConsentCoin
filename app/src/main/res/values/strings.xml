@@ -23,5 +23,6 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="title_activity_sendte_anmodninger">SendteAnmodninger</string>
+    <string name="title_activity_indstillinger">Indstillinger</string>
 
 </resources>

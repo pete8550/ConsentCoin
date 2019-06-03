@@ -10,9 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".view.Indstillinger"
+            android:label="@string/title_activity_indstillinger"
+            android:parentActivityName=".view.Anmodning"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dk.hrpclausen.consentcoin.view.Anmodning" />
+        </activity>
+        <activity
             android:name=".view.SendteAnmodninger"
             android:label="@string/title_activity_sendte_anmodninger"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.MineTilladelser"
             android:label="@string/title_activity_mine_tilladelser"
