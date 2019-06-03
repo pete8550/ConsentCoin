@@ -52,6 +52,8 @@ public class Login extends AppCompatActivity
 
                 DatabaseDAO firebaseDAO = new FirebaseDAO();
                 firebaseDAO.pushToDatabaseBruger(brugernavn.getText().toString());
+
+                startActivity(new Intent(Login.this,GivTilladelse.class));
             }
 
         });
