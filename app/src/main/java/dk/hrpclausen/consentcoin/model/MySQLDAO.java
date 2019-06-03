@@ -11,4 +11,6 @@ public class MySQLDAO implements DatabaseDAO {
     public void pushToDatabaseAnmodning(String text) {
 
     }
-}
+    @Override
+    public void pushToDatabaseBruger(String text) {
+    }}

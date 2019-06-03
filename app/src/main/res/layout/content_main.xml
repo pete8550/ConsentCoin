@@ -18,6 +18,7 @@
         android:textColor="#ffffff"
         android:textSize="16sp"
         android:backgroundTint="@color/colorConsent"
+        android:id="@+id/brugernavn"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
