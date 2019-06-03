@@ -18,6 +18,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
 
 import java.util.Locale;
 
@@ -26,20 +27,16 @@ import dk.hrpclausen.consentcoin.R;
 public class Indstillinger extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private Button button;
+    private Button button2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_indstillinger);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -47,6 +44,35 @@ public class Indstillinger extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
+        getSupportActionBar().setTitle("Consentcoin");
+
+
+
+        button = findViewById(R.id.danskbutton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setAppLocale("da");
+                startActivity(new Intent(Indstillinger.this,GivTilladelse.class));
+
+            }
+        });
+
+
+        button2 = findViewById(R.id.engelskbutton);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setAppLocale("en");
+                startActivity(new Intent(Indstillinger.this,GivTilladelse.class));
+
+            }
+        });
+
+
+
+
     }
 
 
@@ -75,22 +101,16 @@ public class Indstillinger extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.indstillinger, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // Standard metode når man opretter acitivity med Navigationdrawer
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

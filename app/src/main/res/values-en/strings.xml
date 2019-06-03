@@ -17,4 +17,24 @@
     <string name="title_activity_giv_tilladelse">GiveConsent</string>
     <string name="title_activity_mine_tilladelser">MyConsents</string>
     <string name="title_activity_sendte_anmodninger">SendRequests</string>
+    <string name="title_activity_indstillinger">Settings</string>
+    <string name="anmodning1">We at </string>
+    <string name="anmodning2">wish to use pictures of</string>
+    <string name="anmodning3">for</string>
+    <string name="anmodning4">the next</string>
+    <string name="tilladelse1">I</string>
+    <string name="tilladelse2">want to give</string>
+    <string name="tilladelse3">permission to use pictures of me for</string>
+    <string name="tilladelse4">the next</string>
+    <string name="Spinner1item1">Marketing</string>
+    <string name="Spinner1item2">Internal</string>
+    <string name="Spinner1item3">Website</string>
+    <string name="Spinner1item4">Newsletter</string>
+    <string name="Spinner2item1">1 year</string>
+    <string name="Spinner2item2">2 year</string>
+    <string name="Spinner2item3">5 year</string>
+    <string name="Spinner2item4">10 year</string>
+    <string name="Spinner3item1">All students</string>
+    <string name="Spinner3item2">All teachers</string>
+    <string name="Spinner3item3">All staff</string>
 </resources>
