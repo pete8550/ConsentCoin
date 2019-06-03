@@ -9,4 +9,4 @@ This app is coded using methods from the android studios and google services
 
 Language: Java + XML
 
-Authors: MartinLieb, madsmansour, EmilDino and #4pete8550
+Authors: MartinLieb, madsmansour, EmilDino and pete8550
