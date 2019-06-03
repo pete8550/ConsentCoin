@@ -3,9 +3,11 @@ package dk.hrpclausen.consentcoin.model;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
+// en FirebaseDAO klasse der implementerer interfacet DatabaseDAO
 public class FirebaseDAO implements DatabaseDAO {
 
-    // ny Databasereference variabel kaldet databaseReference
+    // ny Databasereference objekt kaldet databaseReference
     private DatabaseReference databaseReference;
 
 
