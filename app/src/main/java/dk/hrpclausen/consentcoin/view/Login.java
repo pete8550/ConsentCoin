@@ -13,17 +13,24 @@ import android.support.v7.widget.Toolbar;
 
 import dk.hrpclausen.consentcoin.R;
 
+//Login-klasse som er den første activity brugeren ser når appen åbnes
 public class Login extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    //override metode der minder meget om PSVM i Java
+    //Uden denne metode ville activitiet ikke kunne åbnes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main); //hvilket XML-layout der anvendes til denne activity
+
+        //Her vises det at der anvendes en toolbar samt hvilken text og text-style der er anvendt
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitleTextAppearance(this, R.style.TitleTextApperance);
         getSupportActionBar().setTitle("Consentcoin");
+
+        //Her vises det at der er en drawer-menu for denne activity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -31,10 +38,9 @@ public class Login extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
     }
 
-
+    //Denne metode viser hvad der sker, når tilbagepilen klikkes på
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -45,10 +51,11 @@ public class Login extends AppCompatActivity
         }
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+    //Denne metode viser de enkelte items i draweren
+    //Samtidigt er der intents der åbner en pågældende activity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
         int id = item.getItemId();
 
         if (id == R.id.nav_giv_tilladelse) {
@@ -71,28 +78,11 @@ public class Login extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_indstillinger) {
-
+            //Ved klik på indstillinger i draweren åbnes intet da intet intent er sat til at åbne en activity (endnu)
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-
 }
-
-//Disse ting skal designes
-//TODO 1: Slet/usynliggør tekst Cosentcoin
-//TODO 2: Lav en textview i toolbar (xml), og design og placer nyt Consentcoin logo
-//TODO 5: Design næste activity
-//TODO 6: Design menuen ved klik på hamburger ikonet
-
-//Disse ting skal programmeres
-//TODO 3: Ændr teksten i edittext (skriv et brugernavn), så den forsvinder ved skrivning
-//TODO 4: Gør teksten funktionel, opret nyt activity og log ind med funktionaliteten
-
-//Andet der kan laves
-//TODO 7: Kommentér både kode og xml. Intet er dokumenteret endnu
-//TODO 8: Skab mere orden i koden. Både i res og i klasser. Eventuelt lav flere styles, så koden minimeres
