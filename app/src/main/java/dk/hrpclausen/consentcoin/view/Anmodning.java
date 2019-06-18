@@ -85,7 +85,7 @@ public class Anmodning extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Samtykke sendt", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Anmodning sendt", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 // Write a message to the firebaseDAO
                 // nyt DatabaseDAO objekt fra FirebaseDAO klassen oprettet.
