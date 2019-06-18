@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import dk.hrpclausen.consentcoin.R;
+import dk.hrpclausen.consentcoin.model.DatabaseDAO;
 import dk.hrpclausen.consentcoin.model.FirebaseDAO;
 
 public class GivTilladelse extends AppCompatActivity
@@ -70,7 +71,7 @@ public class GivTilladelse extends AppCompatActivity
                 Snackbar.make(view, "Samtykke sendt", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 // Skriver en besked til vores firebaseDAO
-                FirebaseDAO firebaseDAO = new FirebaseDAO();
+                DatabaseDAO firebaseDAO = new FirebaseDAO();
                 firebaseDAO.pushToDatabaseConsent(spinner.getSelectedItem().toString() +
                         " har givet tilladelse til " + spinner2.getSelectedItem().toString() +
                         " til at bruge sine billeder til " + spinner3.getSelectedItem().toString() +
